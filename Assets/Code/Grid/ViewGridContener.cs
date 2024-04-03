@@ -38,7 +38,6 @@ namespace Code.Grid
 
         public void ClearGrid()
         {
-            
             for (int row = 0; row < _row; row++)
             {
                 for (int col = 0; col < _col; col++)
@@ -49,7 +48,7 @@ namespace Code.Grid
         }
 
         private void ApplySpriteCell()
-        {
+        {  
             _grid = _gridCard.GetGrid();
             for (int row = 0; row < _row; row++)
             {
@@ -57,8 +56,8 @@ namespace Code.Grid
                 {
                     int IndexCard = UnityEngine.Random.Range(0, _useCard.Count);
                     Cell _currentCell = _grid[row, col].GetComponent<Cell>();
-                    _currentCell.SetSpriteCard(_cardData[IndexCard].SpriteCard);
-                    _currentCell.SetID(_cardData[IndexCard].ID);
+                    _currentCell.SetSpriteCard(_useCard[IndexCard].SpriteCard);
+                    _currentCell.SetID(_useCard[IndexCard].ID);
                     _useCard.RemoveAt(IndexCard);
                 }
             }
