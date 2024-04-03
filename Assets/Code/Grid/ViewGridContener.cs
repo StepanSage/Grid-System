@@ -12,6 +12,7 @@ namespace Code.Grid
 
         [SerializeField] private List<CardData> _cardData;
         [SerializeField] private Cell _prefabCell;
+        [SerializeField] private int _sizeGrid;
 
         private int _row;
         private int _col;
@@ -19,7 +20,6 @@ namespace Code.Grid
         private List<CardData> _useCard;
         private GridCard _gridCard;
         private Cell _cell;
-
 
         public void Initialized(GridCard gridCard, Cell cell)
         {
@@ -32,7 +32,7 @@ namespace Code.Grid
         {
             _row = countRows;
             _col = countColumn;
-            Initialized(new GridCard(_row, _col, 3, _prefabCell.gameObject, transform), new Cell());      
+            Initialized(new GridCard(_row, _col, _sizeGrid, _prefabCell.gameObject, transform), new Cell());      
             ApplySpriteCell();
         }
 
